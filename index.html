@@ -6,7 +6,7 @@
     <meta name="color-scheme" content="light" />
     <meta
       name="description"
-      content="Atendimento jurídico claro e acessível. Fale com o Dr. João Silva pelo WhatsApp para uma orientação inicial."
+      content="Advocacia com atendimento claro e direto. Tire sua dúvida e fale com o Dr. João Silva no WhatsApp."
     />
     <title>Dr. João Silva | Advocacia</title>
 
@@ -17,8 +17,8 @@
         --text: #0f172a;
         --muted: #334155;
         --border: #d7dde6;
-        --shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
-        --shadow-soft: 0 10px 18px rgba(15, 23, 42, 0.06);
+        --shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+        --shadow-soft: 0 10px 16px rgba(15, 23, 42, 0.06);
         --radius: 18px;
 
         --accent: #0b4aa2; /* azul escuro com alto contraste */
@@ -26,17 +26,17 @@
         --accent-surface: #eef4ff;
 
         --success: #0b6b3a;
+        --success-2: #085a31;
         --focus: #111827;
 
         --max: 1100px;
         --pad: 18px;
         --gap: 16px;
 
-        --fs-1: clamp(1.9rem, 4vw, 2.6rem);
-        --fs-2: clamp(1.25rem, 2.6vw, 1.5rem);
-        --fs-3: 1.05rem;
-        --fs-4: 1rem;
-
+        --fs-hero: clamp(2.05rem, 4.3vw, 2.85rem);
+        --fs-sub: clamp(1.25rem, 2.6vw, 1.5rem);
+        --fs-body: 1.08rem;
+        --fs-small: 1.02rem;
         --lh: 1.6;
       }
 
@@ -68,13 +68,13 @@
           Arial, "Noto Sans", "Helvetica Neue", sans-serif;
         color: var(--text);
         background: radial-gradient(
-            900px 260px at 20% -5%,
-            rgba(11, 74, 162, 0.14),
+            900px 260px at 15% -6%,
+            rgba(11, 74, 162, 0.12),
             transparent 60%
           ),
           radial-gradient(
-            900px 260px at 80% -5%,
-            rgba(11, 107, 58, 0.10),
+            900px 260px at 85% -6%,
+            rgba(11, 107, 58, 0.08),
             transparent 60%
           ),
           var(--bg);
@@ -94,6 +94,11 @@
         text-decoration-thickness: 3px;
       }
 
+      :focus-visible {
+        outline: 3px solid var(--focus);
+        outline-offset: 3px;
+      }
+
       .skip-link {
         position: absolute;
         left: 12px;
@@ -106,17 +111,12 @@
         transform: translateY(-160%);
         transition: transform 0.2s ease;
         z-index: 9999;
-        font-weight: 700;
+        font-weight: 800;
       }
 
       .skip-link:focus {
         transform: translateY(0);
         outline: none;
-      }
-
-      :focus-visible {
-        outline: 3px solid var(--focus);
-        outline-offset: 3px;
       }
 
       .container {
@@ -134,9 +134,9 @@
         align-items: center;
         justify-content: space-between;
         gap: 14px;
-        background: rgba(255, 255, 255, 0.78);
+        background: rgba(255, 255, 255, 0.82);
         backdrop-filter: blur(8px);
-        border: 1px solid rgba(215, 221, 230, 0.8);
+        border: 1px solid rgba(215, 221, 230, 0.85);
         border-radius: 999px;
         padding: 10px 12px;
         box-shadow: var(--shadow-soft);
@@ -166,7 +166,7 @@
 
       .brand span {
         display: block;
-        font-size: 0.98rem;
+        font-size: var(--fs-small);
         color: var(--muted);
         white-space: nowrap;
         overflow: hidden;
@@ -193,7 +193,7 @@
         border-radius: 12px;
         color: var(--text);
         text-decoration: none;
-        font-weight: 650;
+        font-weight: 750;
         border: 1px solid transparent;
       }
 
@@ -205,15 +205,11 @@
       }
 
       main {
-        padding: 10px 0 76px;
+        padding: 8px 0 78px;
       }
 
       section {
-        padding: 24px 0;
-      }
-
-      .hero {
-        padding-top: 18px;
+        padding: 28px 0;
       }
 
       .panel {
@@ -238,7 +234,7 @@
 
       @media (min-width: 960px) {
         .hero-grid {
-          grid-template-columns: 1.25fr 0.75fr;
+          grid-template-columns: 1.05fr 0.95fr;
           gap: 22px;
           align-items: center;
         }
@@ -253,22 +249,34 @@
         background: var(--accent-surface);
         border: 1px solid rgba(11, 74, 162, 0.2);
         color: #0a2b5a;
-        font-weight: 750;
+        font-weight: 850;
         font-size: 1rem;
       }
 
       h1 {
-        font-size: var(--fs-1);
-        line-height: 1.14;
+        font-size: var(--fs-hero);
+        line-height: 1.12;
         margin: 14px 0 10px;
         letter-spacing: -0.02em;
       }
 
       .lead {
-        font-size: var(--fs-2);
+        font-size: var(--fs-sub);
         color: var(--muted);
-        margin: 0 0 16px;
-        max-width: 52ch;
+        margin: 0 0 12px;
+        max-width: 56ch;
+      }
+
+      .bullets {
+        margin: 10px 0 0;
+        padding-left: 20px;
+        display: grid;
+        gap: 8px;
+      }
+
+      .bullets li {
+        color: var(--muted);
+        font-size: var(--fs-body);
       }
 
       .cta-row {
@@ -291,15 +299,15 @@
         align-items: center;
         justify-content: center;
         gap: 10px;
-        padding: 14px 16px;
+        padding: 16px 18px;
         border-radius: 14px;
         border: 2px solid transparent;
-        font-weight: 800;
-        font-size: 1.06rem;
+        font-weight: 900;
+        font-size: 1.08rem;
         line-height: 1.2;
         text-decoration: none;
         cursor: pointer;
-        min-height: 54px;
+        min-height: 58px;
         user-select: none;
         -webkit-tap-highlight-color: transparent;
       }
@@ -330,7 +338,7 @@
       }
 
       .meta {
-        margin-top: 14px;
+        margin-top: 16px;
         padding-top: 14px;
         border-top: 1px solid var(--border);
         display: grid;
@@ -339,7 +347,7 @@
 
       .meta p {
         margin: 0;
-        font-size: 1.02rem;
+        font-size: var(--fs-small);
         color: var(--muted);
       }
 
@@ -347,65 +355,26 @@
         color: var(--text);
       }
 
-      .hero-aside {
-        display: grid;
-        gap: 12px;
-      }
-
-      .info-card {
-        background: #ffffff;
-        border: 1px solid var(--border);
-        border-radius: var(--radius);
-        padding: 16px;
-        box-shadow: var(--shadow-soft);
-      }
-
-      .info-card h2 {
-        margin: 0 0 6px;
-        font-size: 1.18rem;
-        letter-spacing: -0.01em;
-      }
-
-      .info-card p {
+      .hero-media {
         margin: 0;
-        font-size: 1.02rem;
-        color: var(--muted);
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        background: #ffffff;
+        box-shadow: var(--shadow-soft);
+        overflow: hidden;
       }
 
-      .badge-list {
-        display: grid;
-        gap: 10px;
-        margin-top: 12px;
-      }
-
-      .badge {
-        display: flex;
-        gap: 10px;
-        align-items: flex-start;
-        padding: 12px;
-        border-radius: 14px;
-        background: #f8fafc;
-        border: 1px solid #e6ebf3;
-      }
-
-      .badge .dot {
-        width: 12px;
-        height: 12px;
-        margin-top: 6px;
-        border-radius: 999px;
-        background: var(--success);
-        flex: 0 0 auto;
-      }
-
-      .badge strong {
+      .hero-media img {
+        width: 100%;
+        height: auto;
         display: block;
-        font-size: 1.06rem;
       }
 
-      .badge span {
-        display: block;
+      .hero-media figcaption {
+        padding: 12px 14px;
+        font-size: var(--fs-small);
         color: var(--muted);
-        font-size: 1.02rem;
+        border-top: 1px solid var(--border);
       }
 
       .section-title {
@@ -423,7 +392,7 @@
 
       .section-subtitle {
         margin: 0;
-        font-size: 1.08rem;
+        font-size: var(--fs-body);
         color: var(--muted);
         max-width: 70ch;
       }
@@ -436,9 +405,6 @@
       @media (min-width: 820px) {
         .grid.cols-3 {
           grid-template-columns: repeat(3, 1fr);
-        }
-        .grid.cols-2 {
-          grid-template-columns: repeat(2, 1fr);
         }
       }
 
@@ -457,11 +423,10 @@
         letter-spacing: -0.01em;
       }
 
-      .card p,
       .card li {
         margin: 0;
         color: var(--muted);
-        font-size: 1.06rem;
+        font-size: var(--fs-body);
       }
 
       .card ul {
@@ -469,6 +434,39 @@
         padding-left: 20px;
         display: grid;
         gap: 8px;
+      }
+
+      .checklist {
+        display: grid;
+        gap: 10px;
+        margin: 0;
+        padding-left: 0;
+        list-style: none;
+      }
+
+      .checklist li {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+        padding: 14px;
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        background: #ffffff;
+        box-shadow: var(--shadow-soft);
+        font-size: var(--fs-body);
+        color: var(--muted);
+      }
+
+      .check {
+        width: 24px;
+        height: 24px;
+        border-radius: 10px;
+        background: rgba(11, 107, 58, 0.12);
+        border: 1px solid rgba(11, 107, 58, 0.35);
+        display: grid;
+        place-items: center;
+        flex: 0 0 auto;
+        margin-top: 1px;
       }
 
       .steps {
@@ -506,7 +504,7 @@
         background: var(--accent-surface);
         border: 1px solid rgba(11, 74, 162, 0.25);
         color: #0a2b5a;
-        font-weight: 900;
+        font-weight: 950;
         font-size: 1.12rem;
       }
 
@@ -520,57 +518,18 @@
       .step p {
         margin: 0;
         color: var(--muted);
-        font-size: 1.06rem;
-      }
-
-      .trust-points {
-        display: grid;
-        gap: 12px;
-      }
-
-      @media (min-width: 820px) {
-        .trust-points {
-          grid-template-columns: repeat(3, 1fr);
-        }
-      }
-
-      .point {
-        display: flex;
-        align-items: flex-start;
-        gap: 12px;
-        padding: 14px;
-        background: #ffffff;
-        border: 1px solid var(--border);
-        border-radius: var(--radius);
-        box-shadow: var(--shadow-soft);
-      }
-
-      .icon {
-        width: 44px;
-        height: 44px;
-        border-radius: 16px;
-        background: var(--accent-surface);
-        border: 1px solid rgba(11, 74, 162, 0.25);
-        display: grid;
-        place-items: center;
-        flex: 0 0 auto;
-      }
-
-      .point strong {
-        display: block;
-        font-size: 1.12rem;
-        margin-bottom: 2px;
-      }
-
-      .point span {
-        display: block;
-        color: var(--muted);
-        font-size: 1.04rem;
+        font-size: var(--fs-body);
       }
 
       .cta-final {
-        background: linear-gradient(180deg, rgba(238, 244, 255, 0.8), #ffffff);
-        border: 1px solid rgba(215, 221, 230, 0.9);
+        background: linear-gradient(180deg, rgba(238, 244, 255, 0.86), #ffffff);
+        border: 1px solid rgba(215, 221, 230, 0.95);
+      }
+
+      .divider {
+        height: 1px;
+        background: rgba(215, 221, 230, 0.95);
+        margin: 18px 0;
       }
 
       footer {
@@ -581,8 +540,8 @@
       footer .foot {
         display: grid;
         gap: 8px;
-        background: rgba(255, 255, 255, 0.75);
-        border: 1px solid rgba(215, 221, 230, 0.8);
+        background: rgba(255, 255, 255, 0.78);
+        border: 1px solid rgba(215, 221, 230, 0.85);
         border-radius: var(--radius);
         padding: 16px;
         box-shadow: var(--shadow-soft);
@@ -590,11 +549,11 @@
 
       footer p {
         margin: 0;
-        font-size: 1.02rem;
+        font-size: var(--fs-small);
       }
 
       .small {
-        font-size: 0.98rem;
+        font-size: var(--fs-small);
       }
 
       .whatsapp-fab {
@@ -609,7 +568,7 @@
         height: 62px;
         border-radius: 22px;
         border: 2px solid #064d2a;
-        background: #0b6b3a;
+        background: var(--success);
         color: #ffffff;
         display: grid;
         place-items: center;
@@ -618,7 +577,7 @@
       }
 
       .fab-btn:hover {
-        background: #085a31;
+        background: var(--success-2);
       }
 
       .sr-only {
@@ -632,12 +591,6 @@
         white-space: nowrap;
         border: 0;
       }
-
-      .divider {
-        height: 1px;
-        background: rgba(215, 221, 230, 0.9);
-        margin: 18px 0;
-      }
     </style>
   </head>
 
@@ -650,278 +603,188 @@
           <div class="mark" aria-hidden="true"></div>
           <div>
             <strong>Dr. João Silva</strong>
-            <span>Advogado • Atendimento em todo o Brasil</span>
+            <span>Advogado • Atendimento por WhatsApp</span>
           </div>
         </div>
 
         <nav aria-label="Navegação principal">
-          <a class="nav-link" href="#areas">Áreas de atuação</a>
-          <a class="nav-link" href="#sobre">Sobre</a>
           <a class="nav-link" href="#como-funciona">Como funciona</a>
-          <a class="nav-link" href="#contato">Contato</a>
+          <a class="nav-link" href="#areas">Áreas</a>
+          <a
+            class="nav-link js-wa"
+            href="#"
+            data-wa-number="5511999999999"
+            data-wa-message="Olá, Dr. João. Gostaria de tirar uma dúvida. Meu assunto é:"
+            aria-label="Tirar dúvida agora no WhatsApp"
+            >Tirar dúvida agora</a
+          >
         </nav>
       </div>
     </header>
 
     <main id="conteudo" class="container" role="main">
-      <section class="hero" aria-label="Apresentação">
+      <section aria-label="Apresentação">
         <div class="panel hero-grid">
           <div>
-            <div class="eyebrow">Atendimento jurídico claro e acessível</div>
-            <h1>Orientação objetiva, com linguagem simples e transparência.</h1>
-            <p class="lead">
-              Você explica sua situação, eu analiso com cuidado e retorno com os
-              próximos passos de forma direta — sem complicação e com foco no que
-              importa.
-            </p>
+            <div class="eyebrow">Atendimento claro. Resposta direta.</div>
+            <h1>Explique seu caso. Tire sua dúvida no WhatsApp.</h1>
+            <p class="lead">Linguagem simples, transparência e próximos passos claros.</p>
+
+            <ul class="bullets" aria-label="Destaques do atendimento">
+              <li>Mensagens objetivas e fáceis de entender</li>
+              <li>Orientação direta sobre o que fazer</li>
+              <li>Atendimento respeitoso</li>
+            </ul>
 
             <div class="cta-row" role="group" aria-label="Ações principais">
               <a
                 class="btn btn-primary js-wa"
                 href="#"
                 data-wa-number="5511999999999"
-                data-wa-message="Olá, Dr. João. Gostaria de falar sobre meu caso."
-                aria-label="Falar no WhatsApp com o Dr. João Silva"
+                data-wa-message="Olá, Dr. João. Quero tirar uma dúvida. Meu assunto é:"
+                aria-label="Falar no WhatsApp"
               >
                 Falar no WhatsApp
               </a>
               <a class="btn btn-secondary" href="#areas" aria-label="Ver áreas de atuação">
-                Ver áreas de atuação
+                Ver áreas
               </a>
             </div>
 
             <div class="meta" aria-label="Informações rápidas">
-              <p><strong>Resposta:</strong> em horário comercial</p>
-              <p><strong>Atendimento:</strong> online e presencial (a combinar)</p>
+              <p><strong>Para começar:</strong> assunto + cidade + resumo</p>
+              <p><strong>Retorno:</strong> em horário comercial</p>
             </div>
           </div>
 
-          <aside class="hero-aside" aria-label="Destaques">
-            <div class="info-card">
-              <h2>Foco na clareza</h2>
-              <p>
-                Explicações passo a passo, com termos simples e escolhas bem
-                apresentadas.
-              </p>
-              <div class="badge-list" aria-label="Pontos de confiança">
-                <div class="badge">
-                  <div class="dot" aria-hidden="true"></div>
-                  <div>
-                    <strong>Objetividade</strong>
-                    <span>O que fazer agora e o que esperar.</span>
-                  </div>
-                </div>
-                <div class="badge">
-                  <div class="dot" aria-hidden="true"></div>
-                  <div>
-                    <strong>Transparência</strong>
-                    <span>Custos e prazos explicados com clareza.</span>
-                  </div>
-                </div>
-                <div class="badge">
-                  <div class="dot" aria-hidden="true"></div>
-                  <div>
-                    <strong>Respeito</strong>
-                    <span>Atendimento humano e sem julgamento.</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </aside>
+          <figure class="hero-media" aria-label="Imagem profissional">
+            <img
+              alt="Imagem ilustrativa de escritório de advocacia, em estilo minimalista."
+              src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='1200'%20height='820'%20viewBox='0%200%201200%20820'%3E%3Cdefs%3E%3CradialGradient%20id='g'%20cx='25%25'%20cy='15%25'%20r='75%25'%3E%3Cstop%20offset='0%25'%20stop-color='%23eef4ff'/%3E%3Cstop%20offset='65%25'%20stop-color='%23ffffff'/%3E%3Cstop%20offset='100%25'%20stop-color='%23f7f8fa'/%3E%3C/radialGradient%3E%3ClinearGradient%20id='b'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%230b4aa2'/%3E%3Cstop%20offset='1'%20stop-color='%230b6b3a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='1200'%20height='820'%20fill='url(%23g)'/%3E%3Crect%20x='84'%20y='92'%20width='1032'%20height='636'%20rx='28'%20fill='%23ffffff'%20stroke='%23d7dde6'%20stroke-width='6'/%3E%3Crect%20x='120'%20y='140'%20width='380'%20height='24'%20rx='12'%20fill='%23eef4ff'/%3E%3Crect%20x='120'%20y='182'%20width='540'%20height='18'%20rx='9'%20fill='%23e6ebf3'/%3E%3Crect%20x='120'%20y='220'%20width='500'%20height='18'%20rx='9'%20fill='%23e6ebf3'/%3E%3Crect%20x='120'%20y='258'%20width='460'%20height='18'%20rx='9'%20fill='%23e6ebf3'/%3E%3Crect%20x='120'%20y='312'%20width='220'%20height='56'%20rx='18'%20fill='url(%23b)'/%3E%3Crect%20x='366'%20y='312'%20width='220'%20height='56'%20rx='18'%20fill='%23ffffff'%20stroke='%23d7dde6'%20stroke-width='6'/%3E%3Cg%20opacity='0.95'%3E%3Crect%20x='720'%20y='160'%20width='330'%20height='420'%20rx='26'%20fill='%23ffffff'%20stroke='%23d7dde6'%20stroke-width='6'/%3E%3Ccircle%20cx='885'%20cy='275'%20r='68'%20fill='%23eef4ff'/%3E%3Cpath%20d='M825%20438c26-62%2094-92%20160-92%2066%200%20134%2030%20160%2092'%20fill='%23eef4ff'/%3E%3Crect%20x='765'%20y='476'%20width='240'%20height='18'%20rx='9'%20fill='%23e6ebf3'/%3E%3Crect%20x='795'%20y='510'%20width='180'%20height='18'%20rx='9'%20fill='%23e6ebf3'/%3E%3C/g%3E%3C/svg%3E"
+            />
+            <figcaption>
+              Imagem ilustrativa (substitua por uma foto profissional, se desejar).
+            </figcaption>
+          </figure>
         </div>
       </section>
 
       <section id="areas" aria-label="Áreas de atuação">
         <div class="section-title">
           <h2 class="section-heading">Áreas de atuação</h2>
-          <p class="section-subtitle">
-            Serviços organizados para você entender rapidamente se sua demanda se
-            encaixa. Se não tiver certeza, me chame no WhatsApp e eu oriento o
-            melhor caminho.
-          </p>
+          <p class="section-subtitle">Escolha o tema e me chame no WhatsApp.</p>
         </div>
 
         <div class="grid cols-3">
           <article class="card" aria-label="Direito Civil">
             <h3>Direito Civil</h3>
             <ul>
-              <li>Contratos e cobranças</li>
-              <li>Indenizações e responsabilidade civil</li>
-              <li>Conflitos entre particulares</li>
+              <li>Contratos</li>
+              <li>Cobranças</li>
+              <li>Indenizações</li>
             </ul>
           </article>
 
           <article class="card" aria-label="Direito Trabalhista">
             <h3>Direito Trabalhista</h3>
             <ul>
-              <li>Verbas rescisórias e horas extras</li>
-              <li>Reconhecimento de vínculo</li>
-              <li>Acordos e orientações preventivas</li>
+              <li>Verbas rescisórias</li>
+              <li>Horas extras</li>
+              <li>Vínculo e acordos</li>
             </ul>
           </article>
 
           <article class="card" aria-label="Direito Previdenciário">
             <h3>Direito Previdenciário</h3>
             <ul>
-              <li>Aposentadorias</li>
-              <li>Benefícios por incapacidade</li>
-              <li>Recursos e revisões</li>
+              <li>Aposentadoria</li>
+              <li>Benefícios</li>
+              <li>Recursos e revisão</li>
             </ul>
           </article>
         </div>
+
+        <div class="cta-row" role="group" aria-label="Chamada para WhatsApp">
+          <a
+            class="btn btn-primary js-wa"
+            href="#"
+            data-wa-number="5511999999999"
+            data-wa-message="Olá, Dr. João. Meu assunto é (Civil/Trabalhista/Previdenciário):"
+            aria-label="Conversar com advogado no WhatsApp"
+          >
+            Conversar com advogado
+          </a>
+        </div>
       </section>
 
-      <section id="sobre" aria-label="Sobre o advogado">
+      <section aria-label="Por que escolher">
         <div class="section-title">
-          <h2 class="section-heading">Sobre</h2>
-          <p class="section-subtitle">
-            Atendimento profissional com foco em confiança, explicação clara e
-            tomada de decisão consciente.
-          </p>
+          <h2 class="section-heading">Por que escolher este atendimento</h2>
+          <p class="section-subtitle">Direto ao ponto, sem complicação.</p>
         </div>
 
-        <div class="grid cols-2">
-          <div class="card" aria-label="Experiência e abordagem">
-            <h3>Experiência e abordagem</h3>
-            <p>
-              Sou o Dr. João Silva, advogado com atuação voltada a orientar
-              clientes de forma direta, com análise cuidadosa dos documentos e do
-              contexto do caso. O objetivo é reduzir dúvidas e organizar os
-              próximos passos de maneira prática.
-            </p>
-          </div>
-
-          <div class="card" aria-label="O que você pode esperar">
-            <h3>O que você pode esperar</h3>
-            <ul>
-              <li>Comunicação clara e respeitosa</li>
-              <li>Explicação das opções antes de decidir</li>
-              <li>Transparência sobre prazos e custos</li>
-              <li>Registro do que foi combinado</li>
-            </ul>
-          </div>
-        </div>
+        <ul class="checklist" aria-label="Motivos para escolher">
+          <li>
+            <span class="check" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M20 6L9 17l-5-5" stroke="#0b6b3a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span><strong>Atendimento claro</strong> — explicação simples.</span>
+          </li>
+          <li>
+            <span class="check" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M20 6L9 17l-5-5" stroke="#0b6b3a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span><strong>Sem juridiquês</strong> — você entende o que está acontecendo.</span>
+          </li>
+          <li>
+            <span class="check" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M20 6L9 17l-5-5" stroke="#0b6b3a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span><strong>Transparência total</strong> — prazos e custos combinados com clareza.</span>
+          </li>
+          <li>
+            <span class="check" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M20 6L9 17l-5-5" stroke="#0b6b3a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span><strong>Orientação direta</strong> — próximos passos objetivos.</span>
+          </li>
+        </ul>
       </section>
 
       <section id="como-funciona" aria-label="Como funciona">
         <div class="section-title">
           <h2 class="section-heading">Como funciona</h2>
-          <p class="section-subtitle">
-            Um processo simples, com etapas bem definidas para você se sentir
-            seguro(a) do início ao fim.
-          </p>
+          <p class="section-subtitle">3 passos. Sem enrolação.</p>
         </div>
 
         <div class="steps" role="list" aria-label="Etapas do atendimento">
           <div class="step" role="listitem">
-            <h3>Contato</h3>
-            <p>
-              Você me chama no WhatsApp e descreve, com tranquilidade, o que está
-              acontecendo.
-            </p>
+            <h3>Você entra em contato</h3>
+            <p>Me diga o assunto e um resumo do caso.</p>
           </div>
           <div class="step" role="listitem">
-            <h3>Análise do caso</h3>
-            <p>
-              Eu verifico as informações e, quando necessário, peço documentos
-              essenciais para entender o cenário.
-            </p>
+            <h3>O caso é analisado</h3>
+            <p>Se preciso, peço os documentos essenciais.</p>
           </div>
           <div class="step" role="listitem">
-            <h3>Orientação</h3>
-            <p>
-              Você recebe uma orientação objetiva, com opções, riscos e próximos
-              passos explicados de forma simples.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section aria-label="Confiança e compromisso">
-        <div class="section-title">
-          <h2 class="section-heading">Compromisso com um atendimento confiável</h2>
-          <p class="section-subtitle">
-            Sem promessas exageradas. O foco é clareza, responsabilidade e
-            transparência.
-          </p>
-        </div>
-
-        <div class="trust-points" aria-label="Pontos de confiança">
-          <div class="point">
-            <div class="icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path
-                  d="M12 2l8 4v6c0 5-3.4 9.4-8 10-4.6-.6-8-5-8-10V6l8-4z"
-                  stroke="#0b4aa2"
-                  stroke-width="2"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M8 12l2.5 2.5L16 9"
-                  stroke="#0b4aa2"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </div>
-            <div>
-              <strong>Atendimento claro</strong>
-              <span>Informações organizadas para reduzir dúvidas.</span>
-            </div>
-          </div>
-
-          <div class="point">
-            <div class="icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path
-                  d="M4 7h16M4 12h10M4 17h16"
-                  stroke="#0b4aa2"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                />
-              </svg>
-            </div>
-            <div>
-              <strong>Linguagem simples</strong>
-              <span>Sem “juridiquês” desnecessário no atendimento.</span>
-            </div>
-          </div>
-
-          <div class="point">
-            <div class="icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path
-                  d="M12 3v18M3 12h18"
-                  stroke="#0b4aa2"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                />
-                <path
-                  d="M7 7l10 10"
-                  stroke="#0b4aa2"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  opacity="0.55"
-                />
-              </svg>
-            </div>
-            <div>
-              <strong>Transparência</strong>
-              <span>Orientação responsável, com limites e possibilidades.</span>
-            </div>
+            <h3>Você recebe orientação</h3>
+            <p>Próximos passos claros e opções bem explicadas.</p>
           </div>
         </div>
       </section>
 
       <section id="contato" class="panel cta-final" aria-label="Chamada final para contato">
         <div class="section-title">
-          <h2 class="section-heading">Fale agora pelo WhatsApp</h2>
-          <p class="section-subtitle">
-            Explique sua situação e receba uma orientação inicial com clareza.
-            Se preferir, você também pode enviar documentos relevantes para
-            análise.
-          </p>
+          <h2 class="section-heading">Tirar dúvida agora</h2>
+          <p class="section-subtitle">Clique e envie uma mensagem no WhatsApp.</p>
         </div>
 
         <div class="cta-row" role="group" aria-label="Ações de contato">
@@ -929,10 +792,10 @@
             class="btn btn-primary js-wa"
             href="#"
             data-wa-number="5511999999999"
-            data-wa-message="Olá, Dr. João. Quero agendar uma orientação. Meu assunto é:"
+            data-wa-message="Olá, Dr. João. Quero tirar uma dúvida. Meu assunto é:"
             aria-label="Abrir conversa no WhatsApp"
           >
-            Abrir WhatsApp
+            Tirar dúvida no WhatsApp
           </a>
           <a class="btn btn-secondary" href="#conteudo" aria-label="Voltar ao início">
             Voltar ao início
@@ -941,9 +804,7 @@
 
         <div class="divider" role="separator" aria-hidden="true"></div>
         <p class="small" style="margin: 0; color: var(--muted)">
-          <strong>Observação:</strong> esta página tem conteúdo informativo e não
-          substitui uma consulta jurídica completa. Cada caso exige análise
-          específica.
+          <strong>Observação:</strong> conteúdo informativo. Cada caso exige análise específica.
         </p>
       </section>
     </main>
@@ -951,9 +812,7 @@
     <footer class="container" role="contentinfo" aria-label="Rodapé">
       <div class="foot">
         <p><strong>Dr. João Silva</strong> — Advocacia</p>
-        <p class="small">
-          © <span id="ano">2026</span> • Todos os direitos reservados
-        </p>
+        <p class="small">© <span id="ano">2026</span> • Todos os direitos reservados</p>
       </div>
     </footer>
 
@@ -962,18 +821,12 @@
         class="fab-btn js-wa"
         href="#"
         data-wa-number="5511999999999"
-        data-wa-message="Olá, Dr. João. Gostaria de falar sobre meu caso."
+        data-wa-message="Olá, Dr. João. Quero tirar uma dúvida. Meu assunto é:"
         aria-label="Falar no WhatsApp (botão flutuante)"
         title="Falar no WhatsApp"
       >
         <span class="sr-only">Falar no WhatsApp</span>
-        <svg
-          width="28"
-          height="28"
-          viewBox="0 0 32 32"
-          fill="none"
-          aria-hidden="true"
-        >
+        <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden="true">
           <path
             d="M16 3C9.4 3 4 8.1 4 14.4c0 2.5.9 4.8 2.4 6.7L5 29l8.4-1.3c1.8.9 3.9 1.4 6.1 1.4 6.6 0 12-5.1 12-11.4S22.6 3 16 3z"
             fill="rgba(255,255,255,0.18)"
@@ -982,7 +835,7 @@
             d="M16 4.7c-5.7 0-10.3 4.3-10.3 9.7 0 2.3.8 4.4 2.2 6.1l-1 5.8 6.1-1c1.6.9 3.4 1.4 5.3 1.4 5.7 0 10.3-4.3 10.3-9.7S21.7 4.7 16 4.7z"
             stroke="#ffffff"
             stroke-width="2"
-            opacity="0.9"
+            opacity="0.92"
           />
           <path
             d="M20.7 18.9c-.2.5-1.3 1.1-1.9 1.2-.5.1-1.2.1-1.9-.1-.4-.1-.9-.3-1.5-.6-2.7-1.3-4.5-4.2-4.6-4.3-.1-.1-1.1-1.4-1.1-2.7 0-1.3.7-1.9 1-2.2.2-.2.5-.3.8-.3h.6c.2 0 .4 0 .6.5.2.5.8 1.9.9 2 .1.2.1.4 0 .6-.1.2-.2.4-.3.5-.2.2-.3.4-.5.6-.2.2-.4.4-.2.7.1.3.7 1.2 1.5 1.9 1 .9 1.8 1.2 2.1 1.3.3.1.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.2.7-.1.3.1 1.7.8 2 1 .3.1.5.2.6.3.1.1.1.6-.1 1.1z"
@@ -1004,25 +857,14 @@
           return "https://wa.me/" + digits + (text ? "?text=" + text : "");
         }
 
-        function handleWaClick(e) {
-          var a = e.currentTarget;
-          if (!a) return;
-          var url = buildWaUrl(a.dataset.waNumber, a.dataset.waMessage);
-          if (!url) return;
-          a.setAttribute("href", url);
-          a.setAttribute("rel", "noopener");
-          a.setAttribute("target", "_blank");
-        }
-
         var waLinks = document.querySelectorAll(".js-wa");
         waLinks.forEach(function (a) {
-          a.addEventListener("click", handleWaClick, { passive: true });
-          // Pré-configura o href sem bloquear navegação/SEO
           var url = buildWaUrl(a.dataset.waNumber, a.dataset.waMessage);
           if (url) a.setAttribute("href", url);
+          a.setAttribute("rel", "noopener");
+          a.setAttribute("target", "_blank");
         });
       })();
     </script>
   </body>
 </html>
-
